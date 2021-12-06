@@ -9,5 +9,13 @@ This tool is used to generate .examl from from .xaml file.
 
 # Use the Tool
 1. Choose the .dll or .exe of assembly
+
+![ButtonProperty](Guide/Image/ChooseAssembly.bmp)
+
 2. Choose the .xaml file which need to convert
-3. 
+
+![ButtonProperty](Guide/Image/ChooseXaml.bmp)
+
+3. Click "Generate" button
+
+![ButtonProperty](Guide/Image/GenerateEXaml.bmp)
