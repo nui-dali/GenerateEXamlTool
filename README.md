@@ -4,6 +4,7 @@ This tool is used to generate .examl from from .xaml file.
 # Install
 1. Open the GenerateEXamlToolSetup/Debug/GenerateEXamlToolSetup.msi
 2. Select folder
+
 ![ButtonProperty](Guide/Image/Install.bmp)
 
 # Use the Tool
