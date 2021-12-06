@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -26,6 +27,16 @@ namespace GenerateEXamlTool
             nugetPackages = new NugetPackages();
 
             ConfigFile.Load();
+
+            if (!File.Exists(ConfigFile.AssemblyPath))
+            {
+                ConfigFile.AssemblyPath = null;
+            }
+
+            if (!File.Exists(ConfigFile.XamlFilePath))
+            {
+                ConfigFile.XamlFilePath = null;
+            }
 
             textBoxAssemblyPath.Text = ConfigFile.AssemblyPath;
             textBoxXamlFilePath.Text = ConfigFile.XamlFilePath;
@@ -72,7 +83,9 @@ namespace GenerateEXamlTool
                 {
                     if (false == nugetPackages.GatherAssemblyPath(referAss))
                     {
-                        if ("Tizen.NUI.XamlBuild" != referAss.Name)
+                        if ("Tizen.NUI.XamlBuild" != referAss.Name
+                            &&
+                            "System.Private.CoreLib" != referAss.Name)
                         {
                             MessageBox.Show($"Can't find assembly {referAss.Name} in nuget packages.");
                         }
